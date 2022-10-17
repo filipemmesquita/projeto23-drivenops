@@ -1,11 +1,14 @@
 version: "3"
+networks:
+  drivenops:
+    driver: bridge
 services:
   postgres_db:
     image: postgres
     container_name: postgres_db
     restart: always
     ports:
-      - 4457:5432
+      - 2345:5432
     env_file:
       - ./back-end/.env
     volumes:
